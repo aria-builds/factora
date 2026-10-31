@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>فاکتورا | صدور فاکتور رسمی</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0a6c6b">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+<script>try{const t=JSON.parse(localStorage.getItem('fx_s')||'{}').th;if(t&&t!='auto')document.documentElement.dataset.th=t}catch(e){}</script>
+<style>
+/* برای کار آفلاین کامل: فایل Vazirmatn.woff2 را در پوشه fonts بگذارید */
+@font-face{font-family:VazirLocal;src:url(fonts/Vazirmatn.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{color-scheme:light;--bg:#f2f5f8;--sf:#fff;--tx:#14202b;--mt:#566676;--ln:#d5dde5;--pr:#0a6c6b;--pt:#fff;--tint:#dff2f0;--bad:#b42318;--ok:#147a45;--warn:#9a5b00;--bar:#14202b;--bt:#f2b134}
+@media(prefers-color-scheme:dark){:root:not([data-th=light]){color-scheme:dark;--bg:#0d1418;--sf:#161f26;--tx:#e6edf1;--mt:#9fb0bd;--ln:#2b3944;--pr:#4fd0c6;--pt:#06201f;--tint:#12302f;--bad:#ff8a80;--ok:#6fd49b;--warn:#f0b45a;--bar:#05090c}}
+:root[data-th=dark]{color-scheme:dark;--bg:#0d1418;--sf:#161f26;--tx:#e6edf1;--mt:#9fb0bd;--ln:#2b3944;--pr:#4fd0c6;--pt:#06201f;--tint:#12302f;--bad:#ff8a80;--ok:#6fd49b;--warn:#f0b45a;--bar:#05090c}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;font:15px/1.7 VazirLocal,Vazirmatn,Tahoma,sans-serif;background:var(--bg);color:var(--tx);padding-bottom:170px}
+:focus-visible{outline:3px solid var(--pr);outline-offset:2px}
+header{display:flex;align-items:center;gap:8px;padding:8px 14px;padding-top:calc(8px + env(safe-area-inset-top));background:var(--sf);border-bottom:1px solid var(--ln);position:sticky;top:0;z-index:5}
+h1{font-size:19px;margin:0;flex:1;color:var(--pr)}
+.ic{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border:1px solid var(--ln);background:var(--sf);border-radius:12px;font-size:18px;color:var(--tx);cursor:pointer}
+nav{position:fixed;inset:auto 0 0 0;display:flex;gap:4px;padding:6px 8px calc(6px + env(safe-area-inset-bottom));background:var(--sf);border-top:1px solid var(--ln);z-index:6}
+nav button{flex:1;min-height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:0;border-radius:12px;background:none;font:inherit;font-size:12px;color:var(--mt);cursor:pointer}
+nav .on{background:var(--tint);color:var(--pr);font-weight:700}
+main{max-width:760px;margin:auto;padding:12px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:14px;margin-bottom:12px}
+h2{font-size:20px;margin:4px 0 12px}h3{font-size:15px;margin:0 0 10px}
+.f{display:block;margin-bottom:10px}.f>span{display:block;font-size:13px;color:var(--mt);margin-bottom:3px}
+input,select,textarea{width:100%;min-height:44px;padding:8px 10px;border:1px solid var(--ln);border-radius:10px;font:inherit;background:var(--bg);color:var(--tx)}
+input[type=checkbox]{width:20px;min-height:20px;accent-color:var(--pr)}input.bad{border-color:var(--bad)}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0 10px}.g2{display:grid;grid-template-columns:1fr 1.4fr;gap:10px}.w{grid-column:1/-1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:8px 16px;border:0;border-radius:10px;background:var(--pr);color:var(--pt);font:inherit;font-weight:700;cursor:pointer}
+.btn.gh{background:none;color:var(--pr);border:1px solid var(--ln)}.btn.dn{background:var(--bad);color:#fff}
+.lk{display:inline-flex;align-items:center;gap:4px;background:none;border:0;color:var(--pr);font:inherit;text-decoration:underline;min-height:44px;padding:0 6px;cursor:pointer}.lk.bad{color:var(--bad)}
+summary{cursor:pointer;color:var(--pr);min-height:44px;display:flex;align-items:center;font-size:14px}details[open]>summary{margin-bottom:6px}
+.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}.btn .i,.lk .i{width:18px;height:18px}
+.m{color:var(--mt);font-size:13px}.note{background:var(--tint);border-radius:12px;padding:8px 12px;margin-bottom:12px;font-size:14px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.sp{justify-content:space-between}
+.it{border:1px solid var(--ln);border-radius:12px;padding:10px;margin-bottom:10px}
+.tt{width:100%;border-collapse:collapse}.tt td{padding:6px 2px;border-bottom:1px solid var(--ln)}.tt td:last-child{text-align:left;font-weight:700}
+.act{position:fixed;inset:auto 0 calc(68px + env(safe-area-inset-bottom)) 0;background:var(--bar);color:#fff;border-top:1px solid var(--ln);display:flex;align-items:center;gap:12px;padding:10px 14px;z-index:6}
+.act small{display:block;opacity:.8;font-size:12px;line-height:1.3}.act b{font-size:22px;color:var(--bt)}.act .btn{margin-inline-start:auto;background:var(--bt);color:#1a1200}
+.bd{font-size:12px;padding:0 10px;border-radius:99px;border:1px solid currentColor}.paid{color:var(--ok)}.unp{color:var(--bad)}.part{color:var(--warn)}.pre{color:var(--mt)}
+.amt{font-size:18px;font-weight:700;margin:4px 0}
+dialog{border:1px solid var(--ln);border-radius:16px;background:var(--sf);color:var(--tx);width:min(92vw,400px)}dialog::backdrop{background:#0009}
+#toast{position:fixed;bottom:150px;left:50%;transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:8px 16px;border-radius:99px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:30;max-width:92vw;text-align:center}#toast.on{opacity:1}
+#pv{display:none;position:fixed;inset:0;background:var(--bg);z-index:20;overflow:auto}#pv.on{display:block}
+.bar{position:sticky;top:0;right:0;background:var(--bar);padding:8px;display:flex;gap:8px;flex-wrap:wrap;z-index:2}.bar .btn.gh{color:#fff;border-color:#fff6}
+.sc{overflow-x:auto;padding:8px}
+.sh{background:#fff;color:#000;width:794px;margin:0 auto;padding:22px;font-size:12px;line-height:1.6;border:1px solid #cfd6de;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.sh-h{display:grid;grid-template-columns:1fr 2fr 1.3fr;align-items:center;border-bottom:2px solid #000;padding-bottom:8px;gap:8px}
+.sh-h img{max-height:60px;max-width:100%}.sh-h h2{font-size:20px;text-align:center;margin:0}.sh-h small{display:block;text-align:center;color:#444}
+.pt{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.bx{border:1px solid #333;border-radius:4px;padding:6px;line-height:1.9}
+.bx h4{margin:0 0 4px;background:#eee;padding:3px 6px;font-size:12px}.bx span{color:#444}
+.sh table{width:100%;border-collapse:collapse}.sh th,.sh td{border:1px solid #333;padding:4px 3px;text-align:center;font-size:10.5px}.sh th{background:#eee}.sh td.l{text-align:right}
+.sum{width:55%!important;margin:8px 0 0 auto}.sum td{text-align:right;font-size:12px}.sum td:last-child{text-align:left}.sum tr.gt td{background:#eee;font-weight:700;font-size:13px}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.sg div{border:1px solid #333;height:80px;padding:6px;text-align:center}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{body>*:not(#pv){display:none!important}#pv{position:static;display:block!important;background:#fff;overflow:visible}.bar{display:none!important}.sc{padding:0;overflow:visible}.sh{border:0;width:auto;padding:0;zoom:1!important}@page{size:A4;margin:10mm}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14.3c1.8.8 3 2.7 3 5.7"/></symbol>
+<symbol id="i-set" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
+<symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></symbol>
+<symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="7" y="14" width="10" height="7" rx="1"/></symbol>
+<symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.6l6.8-4M8.6 13.4l6.8 4"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></symbol>
+<symbol id="i-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></symbol>
+</defs></svg>
+<header><h1>فاکتورا</h1><button class="btn gh" id="inst" hidden><svg class="i" aria-hidden="true"><use href="#i-down"/></svg>نصب اپ</button><button class="ic" id="th" aria-label="تغییر پوسته"></button></header>
+<main>
+<section id="v-list"></section>
+<section id="v-edit" hidden></section>
+<section id="v-cus" hidden></section>
+<section id="v-set" hidden></section>
+</main>
+<nav aria-label="منوی اصلی"><button data-v="list"><svg class="i" aria-hidden="true"><use href="#i-list"/></svg>فاکتورها</button><button data-v="new"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg>فاکتور جدید</button><button data-v="cus"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>مشتریان</button><button data-v="set"><svg class="i" aria-hidden="true"><use href="#i-set"/></svg>تنظیمات</button></nav>
+<div id="pv" role="dialog" aria-modal="true" aria-label="پیش‌نمایش فاکتور"><div class="bar"><button class="btn gh" id="pc"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg>بستن</button><button class="btn" id="pp"><svg class="i" aria-hidden="true"><use href="#i-print"/></svg>چاپ / ذخیره PDF</button><button class="btn gh" id="ps"><svg class="i" aria-hidden="true"><use href="#i-share"/></svg>اشتراک‌گذاری</button><button class="btn gh" id="pe"><svg class="i" aria-hidden="true"><use href="#i-edit"/></svg>ویرایش</button></div><div class="sc" id="pvc"></div></div>
+<dialog id="dlg"><form method="dialog"><h3></h3><p class="m"></p><div class="row"><button class="btn dn" value="ok"></button><button class="btn gh" value="no"></button></div></form></dialog>
+<datalist id="units"><option>عدد<option>کیلوگرم<option>متر<option>متر مربع<option>لیتر<option>بسته<option>کارتن<option>دستگاه<option>جفت<option>تن<option>ساعت<option>ماه<option>خدمت</datalist>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+const $=s=>document.querySelector(s),PD='۰۱۲۳۴۵۶۷۸۹';
+const fa=s=>String(s??'').replace(/\d/g,d=>PD[d]);
+const en=s=>String(s??'').replace(/[۰-۹]/g,d=>PD.indexOf(d)).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[٬,]/g,'').replace(/٫/g,'.');
+const num=v=>parseFloat(en(v))||0,money=n=>fa(Math.round(n).toLocaleString('en-US')).replace(/,/g,'٬');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ic=n=>`<svg class="i" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+const ld=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}};
+let S=Object.assign({seller:{},tax:10,unit:'ریال',nextNo:1,prefix:'',terms:'',th:'auto'},ld('fx_s',{})),INV=ld('fx_i',[]),CUS=ld('fx_c',[]),cur=null,pv=null,pt,dt;
+if(!Array.isArray(INV))INV=[];if(!Array.isArray(CUS))CUS=[];
+function persist(now){clearTimeout(pt);const w=()=>{try{localStorage.setItem('fx_s',JSON.stringify(S));localStorage.setItem('fx_i',JSON.stringify(INV));localStorage.setItem('fx_c',JSON.stringify(CUS))}catch(e){toast('ذخیره انجام نشد. فضای حافظه پر است؛ از تنظیمات پشتیبان بگیرید و فاکتورهای قدیمی را پاک کنید.')}};now?w():pt=setTimeout(w,300)}
+addEventListener('pagehide',()=>persist(true));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,5),clone=o=>JSON.parse(JSON.stringify(o)),isNew=()=>!INV.some(x=>x.id==cur.id);
+let tt;function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('on'),3200)}
+function fail(msg,sel){toast(msg);const e=sel&&$(sel),d=e?.closest('details');if(d)d.open=true;e?.focus();return false}
+function ask(t,m,ok,no){return new Promise(r=>{const d=$('#dlg');d.querySelector('h3').textContent=t;d.querySelector('p').textContent=m;d.querySelector('[value=ok]').textContent=ok;d.querySelector('[value=no]').textContent=no;d.returnValue='';d.onclose=()=>r(d.returnValue=='ok');d.showModal()})}
+function setp(o,p,v){const a=p.split('.');while(a.length>1){const k=a.shift();o=o[k]??(o[k]={})}o[a[0]]=v}
+/* پوسته */
+function applyTheme(){const t=S.th||'auto',r=document.documentElement;t=='auto'?r.removeAttribute('data-th'):r.dataset.th=t;const dk=t=='dark'||(t=='auto'&&matchMedia('(prefers-color-scheme:dark)').matches);$('meta[name=theme-color]').content=dk?'#0d1418':'#0a6c6b';$('#th').innerHTML=ic({auto:'auto',light:'sun',dark:'moon'}[t]);$('#th').title='پوسته: '+{auto:'خودکار',light:'روشن',dark:'تیره'}[t]}
+$('#th').onclick=()=>{S.th={auto:'light',light:'dark',dark:'auto'}[S.th||'auto'];persist();applyTheme();toast('پوسته: '+{auto:'خودکار (مطابق گوشی)',light:'روشن',dark:'تیره'}[S.th])};
+matchMedia('(prefers-color-scheme:dark)').addEventListener?.('change',applyTheme);
+/* تاریخ شمسی */
+function g2j(gy,gm,gd){const g=[0,31,59,90,120,151,181,212,243,273,304,334],y2=gm>2?gy+1:gy;let d=355666+365*gy+Math.floor((y2+3)/4)-Math.floor((y2+99)/100)+Math.floor((y2+399)/400)+gd+g[gm-1],jy=-1595+33*Math.floor(d/12053);d%=12053;jy+=4*Math.floor(d/1461);d%=1461;if(d>365){jy+=Math.floor((d-1)/365);d=(d-1)%365}return[jy,d<186?1+Math.floor(d/31):7+Math.floor((d-186)/30),1+(d<186?d%31:(d-186)%30)]}
+const pad=n=>String(n).padStart(2,'0'),today=()=>{const d=new Date(),j=g2j(d.getFullYear(),d.getMonth()+1,d.getDate());return fa(j[0]+'/'+pad(j[1])+'/'+pad(j[2]))};
+/* مبلغ به حروف */
+const U=['','یک','دو','سه','چهار','پنج','شش','هفت','هشت','نه','ده','یازده','دوازده','سیزده','چهارده','پانزده','شانزده','هفده','هجده','نوزده'],T=['','','بیست','سی','چهل','پنجاه','شصت','هفتاد','هشتاد','نود'],H=['','صد','دویست','سیصد','چهارصد','پانصد','ششصد','هفتصد','هشتصد','نهصد'],SC=['','هزار','میلیون','میلیارد','تریلیون'];
+function w3(n){const h=Math.floor(n/100),r=n%100,p=[];if(h)p.push(H[h]);if(r)p.push(r<20?U[r]:T[Math.floor(r/10)]+(r%10?' و '+U[r%10]:''));return p.join(' و ')}
+function words(n){n=Math.round(Math.abs(n));if(!n)return 'صفر';const p=[];let i=0;while(n>0){const x=n%1000;if(x)p.unshift(w3(x)+(SC[i]?' '+SC[i]:''));n=Math.floor(n/1000);i++}return p.join(' و ')}
+const okMelli=s=>{if(!/^\d{10}$/.test(s)||/^(\d)\1{9}$/.test(s))return false;let c=0;for(let i=0;i<9;i++)c+=s[i]*(10-i);c%=11;return c<2?+s[9]===c:+s[9]===11-c};
+/* مدل */
+const blank=()=>({code:'',desc:'',unit:'عدد',qty:1,price:'',disc:0,tax:S.tax});
+const newInv=()=>({id:uid(),no:S.prefix+S.nextNo,date:today(),kind:'فاکتور فروش',seller:S.seller,buyer:{type:'حقیقی'},items:[blank()],pay:'نقدی',uid:'',ref:'',subj:'',notes:S.terms||'',extra:0,paid:0,cur:S.unit});
+function calc(v){let g=0,d=0,t=0;const rows=v.items.map(i=>{const gr=num(i.qty)*num(i.price),dc=Math.min(num(i.disc),gr),net=gr-dc,tx=Math.round(net*num(i.tax)/100);g+=gr;d+=dc;t+=tx;return{gross:gr,net,tx,tot:net+tx}});const net=g-d,ex=num(v.extra),total=net+t+ex,paid=num(v.paid);return{rows,g,d,net,t,ex,total,paid,rem:total-paid}}
+const stOf=v=>{const c=calc(v);return v.kind=='پیش‌فاکتور'?['pre','پیش‌فاکتور']:c.total>0&&c.paid>=c.total?['paid','تسویه‌شده']:c.paid>0?['part','تسویه ناقص']:['unp','پرداخت‌نشده']};
+/* اجزای فرم */
+const PF=[['name','نام / عنوان'],['nid','شناسه ملی / کد ملی'],['eco','شماره اقتصادی'],['reg','شماره ثبت'],['post','کد پستی'],['tel','تلفن'],['addr','نشانی']];
+const F=(a,p,l,v,x='',w='')=>`<label class="f ${w}"><span>${l}</span><input data-${a}="${p}" value="${esc(v)}" ${x}></label>`;
+const party=(a,pre,o,skip='')=>PF.filter(([k])=>!skip.includes(k)).map(([k,l])=>F(a,(pre?pre+'.':'')+k,l,o[k],/nid|post|tel|eco|reg/.test(k)?'inputmode="numeric"':'',k=='addr'?'w':'')).join('');
+const SEL=(a,p,l,opts,v)=>`<label class="f"><span>${l}</span><select data-${a}="${p}">${opts.map(o=>Array.isArray(o)?`<option value="${o[0]}" ${o[0]==v?'selected':''}>${o[1]}</option>`:`<option ${o==v?'selected':''}>${o}</option>`).join('')}</select></label>`;
+function show(v){['list','edit','cus','set'].forEach(x=>$('#v-'+x).hidden=x!=v);document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v==(v=='edit'?'new':v)));({list:renderList,edit:renderEdit,cus:renderCus,set:renderSet})[v]();scrollTo(0,0)}
+function newInvoice(b){const d=!b&&ld('fx_d',null);if(d&&d.items){cur=d;cur.seller=S.seller;if(INV.some(x=>x.no==cur.no))cur.no=S.prefix+S.nextNo;toast('پیش‌نویس قبلی بازیابی شد.')}else{cur=newInv();if(b)cur.buyer={type:'حقیقی',...b}}show('edit')}
+const draft=()=>{clearTimeout(dt);dt=setTimeout(()=>{try{if(isNew())localStorage.setItem('fx_d',JSON.stringify(cur))}catch(e){}},400)};
+/* ویرایشگر: خریدار ← اقلام ← مالیات و پرداخت */
+function renderEdit(){const v=cur,b=v.buyer;$('#v-edit').innerHTML=`
+<div class="row sp"><h2>${isNew()?'فاکتور جدید':'ویرایش فاکتور '+fa(esc(v.no))}</h2>${isNew()?'<button class="lk" id="reset">پاک کردن فرم</button>':''}</div>
+${S.seller.name?'':`<div class="note">مشخصات فروشنده ثبت نشده است و روی فاکتور چاپی خالی می‌ماند. <button class="lk" id="gset">ثبت مشخصات</button></div>`}
+<section class="card"><h3>خریدار</h3>
+<label class="f"><span>نام خریدار</span><input data-f="buyer.name" list="custs" autocomplete="off" value="${esc(b.name)}"></label><datalist id="custs">${CUS.map(c=>`<option value="${esc(c.name)}">`).join('')}</datalist>
+<details><summary>مشخصات کامل خریدار (شناسه ملی، شماره اقتصادی، نشانی…)</summary><div class="g">${SEL('f','buyer.type','نوع خریدار',['حقیقی','حقوقی','مصرف‌کننده نهایی','غیرایرانی'],b.type)}${party('f','buyer',b,'name')}</div></details></section>
+<section class="card"><h3>کالا و خدمات</h3><div id="items"></div><button class="btn gh" id="addit">${ic('plus')}ردیف جدید</button></section>
+<section class="card"><h3>جمع‌بندی</h3><div id="tot"></div>
+<details><summary>مالیات، هزینه‌ها و پرداخت</summary><div class="g">${F('f','extra','سایر هزینه‌ها (حمل و…)',v.extra,'inputmode="decimal"')}${F('f','paid','مبلغ پرداخت‌شده / بیعانه',v.paid,'inputmode="decimal"')}
+<label class="f"><span>نرخ مالیات همه ردیف‌ها (٪)</span><input id="alltax" inputmode="decimal" value="${fa(v.items[0]?.tax??S.tax)}"></label>${SEL('f','pay','روش پرداخت',['نقدی','نسیه','نقدی و نسیه','چک','کارتخوان / آنلاین'],v.pay)}</div></details></section>
+<details class="card"><summary>اطلاعات رسمی صورتحساب (شماره، تاریخ، شناسه یکتا…)</summary><div class="g">${SEL('f','kind','نوع سند',['فاکتور فروش','پیش‌فاکتور','برگشت از فروش'],v.kind)}${F('f','no','شماره فاکتور',v.no)}${F('f','date','تاریخ (شمسی)',v.date)}${F('f','uid','شناسه یکتای مالیاتی',v.uid)}${F('f','ref','شماره ارجاع / سفارش',v.ref)}${F('f','subj','موضوع',v.subj)}</div>
+<label class="f"><span>توضیحات / شرایط فروش</span><textarea data-f="notes" rows="3">${esc(v.notes)}</textarea></label></details>
+<label class="row" style="margin-bottom:8px"><input type="checkbox" id="savecus" ${b.name&&CUS.some(c=>c.name==b.name)?'':'checked'}> ذخیره خریدار برای فاکتورهای بعدی</label>
+<div class="act"><div><small>مبلغ قابل پرداخت (${v.cur})</small><b id="gt">۰</b></div><button class="btn" id="sv">ذخیره و مشاهده</button></div>`;renderItems();upd()}
+const IN=(i,k,l,v,x='')=>`<label class="f"><span>${l}</span><input data-i="${i}" data-k="${k}" value="${esc(v)}" ${x}></label>`;
+function renderItems(){$('#items').innerHTML=cur.items.map((it,i)=>`<div class="it">${IN(i,'desc','شرح کالا یا خدمات',it.desc,'autocomplete="off"')}
+<div class="g2">${IN(i,'qty','تعداد',it.qty,'inputmode="decimal"')}${IN(i,'price','مبلغ واحد ('+cur.cur+')',it.price,'inputmode="decimal"')}</div>
+<details><summary>تخفیف، مالیات، واحد و کد کالا</summary><div class="g">${IN(i,'disc','تخفیف ('+cur.cur+')',it.disc,'inputmode="decimal"')}${IN(i,'tax','مالیات ٪',it.tax,'inputmode="decimal"')}${IN(i,'unit','واحد',it.unit,'list="units"')}${IN(i,'code','کد کالا',it.code)}</div></details>
+<div class="row sp"><b data-rt="${i}"></b>${cur.items.length>1?`<button class="lk bad" data-del="${i}">${ic('trash')}حذف ردیف ${fa(i+1)}</button>`:''}</div></div>`).join('')}
+function upd(){const c=calc(cur),u=cur.cur;document.querySelectorAll('[data-rt]').forEach(e=>e.textContent='جمع ردیف: '+money(c.rows[e.dataset.rt].tot)+' '+u);$('#gt').textContent=money(c.total);
+$('#tot').innerHTML=`<table class="tt"><tr><td>مبلغ پس از تخفیف</td><td>${money(c.net)}</td></tr><tr><td>مالیات بر ارزش افزوده</td><td>${money(c.t)}</td></tr>${c.ex?`<tr><td>سایر هزینه‌ها</td><td>${money(c.ex)}</td></tr>`:''}${c.paid?`<tr><td>پرداخت‌شده</td><td>${money(c.paid)}</td></tr><tr><td>مانده</td><td>${money(c.rem)}</td></tr>`:''}</table><p class="m">${words(c.total)} ${u}</p>`}
+function saveInv(){const b=cur.buyer;
+if(b.type!='مصرف‌کننده نهایی'&&!(b.name||'').trim())return fail('نام خریدار خالی است. برای ذخیره فاکتور، نام خریدار را وارد کنید.','[data-f="buyer.name"]');
+const bad=cur.items.findIndex(i=>(i.desc||'').trim()&&!num(i.price));if(bad>=0)return fail('مبلغ واحد ردیف '+fa(bad+1)+' خالی است. مبلغ را وارد کنید یا ردیف را حذف کنید.',`[data-i="${bad}"][data-k="price"]`);
+if(!cur.items.some(i=>(i.desc||'').trim()&&num(i.price)>0))return fail('هنوز کالا یا خدمتی ثبت نشده. شرح و مبلغ حداقل یک ردیف را وارد کنید.','[data-k="desc"]');
+if(INV.some(x=>x.id!=cur.id&&x.no==cur.no))return fail('شماره فاکتور '+fa(cur.no)+' قبلاً استفاده شده است. شماره دیگری وارد کنید.','[data-f="no"]');
+cur.items=cur.items.filter(i=>(i.desc||'').trim()||num(i.price));const k=INV.findIndex(x=>x.id==cur.id);cur.seller={...cur.seller};
+if(k<0){INV.unshift(cur);if(cur.no==S.prefix+S.nextNo)S.nextNo++}else INV[k]=cur;
+if($('#savecus')?.checked&&b.name){const j=CUS.findIndex(c=>(c.nid&&c.nid==b.nid)||c.name==b.name);j<0?CUS.push({...b}):CUS[j]={...b}}
+try{localStorage.removeItem('fx_d')}catch(e){}persist(true);return true}
+const E=$('#v-edit');
+E.addEventListener('input',e=>{const t=e.target;if(!cur)return;if(t.dataset.f)setp(cur,t.dataset.f,t.value);else if(t.dataset.k)cur.items[t.dataset.i][t.dataset.k]=t.value;else if(t.id=='alltax'){cur.items.forEach(i=>i.tax=t.value);renderItems()}else return;upd();draft()});
+E.addEventListener('change',e=>{const t=e.target,f=t.dataset.f||'';
+if(f=='buyer.name'){const c=CUS.find(x=>x.name==t.value);if(c&&!cur.buyer.nid){cur.buyer={type:'حقیقی',...c};renderEdit();draft()}}
+if(f.endsWith('nid')){const v=en(t.value);t.classList.toggle('bad',v.length==10&&!okMelli(v));if(t.classList.contains('bad'))toast('کد ملی معتبر نیست. ارقام را دوباره بررسی کنید.')}
+if(f.endsWith('post')){t.classList.toggle('bad',!!t.value&&en(t.value).length!=10);if(t.classList.contains('bad'))toast('کد پستی باید ۱۰ رقم باشد.')}});
+E.addEventListener('click',async e=>{const t=e.target.closest('button')||e.target;
+if(t.id=='addit'){cur.items.push(blank());renderItems();upd();E.querySelector('.it:last-child [data-k=desc]').focus()}
+else if(t.dataset.del){cur.items.splice(t.dataset.del,1);renderItems();upd();draft()}
+else if(t.id=='sv'){if(saveInv())openPv(cur)}
+else if(t.id=='gset')show('set');
+else if(t.id=='reset'&&await ask('پاک کردن فرم؟','اطلاعاتی که وارد کرده‌اید حذف می‌شود و قابل بازگشت نیست.','پاک کردن فرم','ادامه ویرایش')){try{localStorage.removeItem('fx_d')}catch(_){}cur=newInv();renderEdit()}});
+/* فهرست فاکتورها */
+function renderList(){const q=$('#q')?.value||'',n=en(q).trim().toLowerCase(),L=INV.filter(v=>!n||en([v.no,v.date,v.buyer.name,v.buyer.nid,v.subj].join(' ')).toLowerCase().includes(n));let sales=0,due=0;
+INV.forEach(v=>{if(v.kind=='پیش‌فاکتور')return;const c=calc(v),k=v.kind=='برگشت از فروش'?-1:1;sales+=k*c.total;if(k>0)due+=Math.max(c.rem,0)});
+const row=v=>{const c=calc(v),[st,sl]=stOf(v);return `<div class="card"><div class="row sp"><b>${fa(esc(v.no))} · ${v.kind}</b><span class="bd ${st}">${sl}</span></div><div>${esc(v.buyer.name||'مصرف‌کننده نهایی')} <span class="m">${fa(v.date)}${v.subj?' · '+esc(v.subj):''}</span></div><div class="amt">${money(c.total)} ${v.cur}</div>
+<div class="row"><button class="btn" data-a="view" data-id="${v.id}">${ic('eye')}مشاهده و چاپ</button><button class="btn gh" data-a="edit" data-id="${v.id}">${ic('edit')}ویرایش</button>
+<details><summary>بیشتر</summary><div class="row"><button class="btn gh" data-a="dup" data-id="${v.id}">${ic('copy')}کپی فاکتور</button>${v.kind=='پیش‌فاکتور'?'':`<button class="btn gh" data-a="pay" data-id="${v.id}">${ic('ok')}ثبت تسویه کامل</button>`}<button class="btn dn" data-a="del" data-id="${v.id}">${ic('trash')}حذف</button></div></details></div></div>`};
+$('#v-list').innerHTML=`${S.seller.name?'':`<div class="note">برای چاپ فاکتور رسمی، اول مشخصات فروشنده را ثبت کنید. <button class="lk" data-a="gset">ثبت مشخصات</button></div>`}
+${INV.length?`<div class="card row sp"><div><div class="m">جمع فروش (${S.unit})</div><b class="amt">${money(sales)}</b></div><div><div class="m">مانده مطالبات</div><b class="amt">${money(due)}</b></div></div><label class="f"><span>جستجو</span><input id="q" type="search" value="${esc(q)}" placeholder="شماره، نام خریدار یا موضوع"></label>`:''}
+<div id="lst">${L.length?L.map(row).join(''):INV.length?'<div class="card m">فاکتوری با این عبارت پیدا نشد. شماره، نام خریدار یا موضوع دیگری را امتحان کنید.</div>':'<div class="card"><h3>هنوز فاکتوری نساخته‌اید</h3><p class="m">اولین فاکتور را بسازید تا اینجا نمایش داده شود.</p><button class="btn" data-a="new">'+ic('plus')+'ساخت فاکتور جدید</button></div>'}</div>`;
+const qi=$('#q');if(qi&&q){qi.focus();qi.setSelectionRange(q.length,q.length)}}
+$('#v-list').addEventListener('input',e=>{if(e.target.id=='q')renderList()});
+$('#v-list').addEventListener('click',async e=>{const b=e.target.closest('[data-a]');if(!b)return;const v=INV.find(x=>x.id==b.dataset.id),a=b.dataset.a;
+if(a=='new')newInvoice();else if(a=='gset')show('set');else if(a=='view')openPv(v);else if(a=='edit'){cur=clone(v);show('edit')}
+else if(a=='dup'){cur=clone(v);cur.id=uid();cur.no=S.prefix+S.nextNo;cur.date=today();cur.paid=0;show('edit');toast('کپی ساخته شد. بعد از ویرایش ذخیره کنید.')}
+else if(a=='pay'){v.paid=calc(v).total;persist(true);renderList();toast('فاکتور تسویه‌شده ثبت شد.')}
+else if(a=='del'&&await ask('حذف فاکتور '+fa(v.no)+'؟','این فاکتور برای همیشه حذف می‌شود و قابل بازگشت نیست.','حذف فاکتور','نگه داشتن')){INV=INV.filter(x=>x.id!=v.id);persist(true);renderList();toast('فاکتور حذف شد.')}});
+/* مشتریان */
+function renderCus(){$('#v-cus').innerHTML=`<h2>مشتریان</h2>${CUS.length?CUS.map((c,i)=>`<div class="card"><b>${esc(c.name)}</b><div class="m">${fa(esc([c.nid,c.tel].filter(Boolean).join(' · ')))}</div><div class="row"><button class="btn" data-ci="${i}" data-a="use">فاکتور جدید برای او</button><button class="btn dn" data-ci="${i}" data-a="del">حذف</button></div></div>`).join(''):'<div class="card m">هنوز مشتری ذخیره نشده است. هنگام ذخیره فاکتور، خریدار خودکار اینجا اضافه می‌شود.</div>'}
+<details class="card"><summary>افزودن مشتری جدید</summary><div class="g">${party('c','',{})}</div><button class="btn" id="addc">ذخیره مشتری</button></details>`}
+$('#v-cus').addEventListener('click',async e=>{const t=e.target;if(t.id=='addc'){const o={type:'حقیقی'};document.querySelectorAll('#v-cus [data-c]').forEach(x=>o[x.dataset.c]=x.value);if(!o.name.trim())return toast('نام مشتری خالی است. نام را وارد کنید.');CUS.push(o);persist(true);renderCus()}
+else if(t.dataset.a=='use')newInvoice(CUS[t.dataset.ci]);
+else if(t.dataset.a=='del'&&await ask('حذف مشتری؟','فاکتورهای قبلی او حذف نمی‌شوند.','حذف مشتری','نگه داشتن')){CUS.splice(t.dataset.ci,1);persist(true);renderCus()}});
+/* تنظیمات */
+function renderSet(){const s=S.seller;$('#v-set').innerHTML=`<h2>تنظیمات</h2>
+<details class="card" ${s.name?'':'open'}><summary>مشخصات فروشنده</summary><p class="m">یک بار پر می‌شود و روی همه فاکتورها چاپ می‌شود.</p><div class="g">${party('s','seller',s)}</div>
+<label class="f"><span>لوگو (اختیاری)</span>${S.logo?`<img src="${S.logo}" alt="لوگوی فعلی" style="height:48px;display:block;margin-bottom:6px">`:''}<input type="file" id="logo" accept="image/*"></label>${S.logo?'<button class="btn gh" id="rmlogo">حذف لوگو</button>':''}</details>
+<details class="card"><summary>مالیات و شماره‌گذاری</summary><div class="g">${F('s','tax','نرخ پیش‌فرض مالیات بر ارزش افزوده (٪)',fa(S.tax),'inputmode="decimal"')}${SEL('s','unit','واحد پول',['ریال','تومان'],S.unit)}${F('s','prefix','پیشوند شماره فاکتور',S.prefix)}${F('s','nextNo','شماره فاکتور بعدی',fa(S.nextNo),'inputmode="numeric"')}</div>
+<label class="f"><span>متن پیش‌فرض توضیحات / شرایط فروش</span><textarea data-s="terms" rows="3">${esc(S.terms)}</textarea></label></details>
+<details class="card"><summary>ظاهر برنامه</summary>${SEL('s','th','پوسته',[['auto','خودکار (مطابق گوشی)'],['light','روشن'],['dark','تیره']],S.th)}</details>
+<details class="card"><summary>پشتیبان‌گیری</summary><div class="row"><button class="btn" id="exp">دریافت نسخه پشتیبان</button><label class="btn gh" style="margin:0">بازیابی از فایل<input type="file" id="imp" accept=".json" hidden></label></div><p class="m">داده‌ها فقط روی همین دستگاه ذخیره می‌شوند و با پاک شدن اطلاعات برنامه از بین می‌روند. هر چند وقت یک‌بار پشتیبان بگیرید.</p></details>`}
+const V=$('#v-set');
+V.addEventListener('input',e=>{const k=e.target.dataset.s;if(!k)return;setp(S,k,k=='nextNo'?(parseInt(en(e.target.value))||1):k=='tax'?en(e.target.value):e.target.value);if(k=='th')applyTheme();persist()});
+V.addEventListener('change',e=>{const t=e.target,k=t.dataset.s||'';if(k.endsWith('nid')){t.classList.toggle('bad',en(t.value).length==10&&!okMelli(en(t.value)));if(t.classList.contains('bad'))toast('کد ملی معتبر نیست. ارقام را دوباره بررسی کنید.')}
+if(t.id=='logo'&&t.files[0]){const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const z=Math.min(1,240/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*z;c.height=im.height*z;c.getContext('2d').drawImage(im,0,0,c.width,c.height);S.logo=c.toDataURL('image/png');persist(true);renderSet()};im.onerror=()=>toast('این فایل تصویر معتبری نیست. یک فایل PNG یا JPG انتخاب کنید.');im.src=r.result};r.readAsDataURL(t.files[0])}
+if(t.id=='imp'&&t.files[0]){const f=t.files[0];ask('بازیابی از پشتیبان؟','فاکتورها و مشتریان فعلی با محتوای فایل جایگزین می‌شود.','بازیابی','انصراف').then(async ok=>{if(!ok)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d.INV)||!Array.isArray(d.CUS))throw 0;if(d.S&&typeof d.S=='object')S=Object.assign(S,d.S);INV=d.INV;CUS=d.CUS;persist(true);applyTheme();renderSet();toast('پشتیبان بازیابی شد.')}catch(_){toast('فایل پشتیبان معتبر نیست. فایلی را که از همین برنامه گرفته‌اید انتخاب کنید.')}})}});
+V.addEventListener('click',e=>{const t=e.target;if(t.id=='rmlogo'){delete S.logo;persist(true);renderSet()}if(t.id=='exp'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({S,INV,CUS})],{type:'application/json'}));a.download='factora-backup-'+Date.now()+'.json';a.click()}});
+/* برگه فاکتور و چاپ */
+function sheet(v){const c=calc(v),s=v.seller||{},b=v.buyer||{},u=v.cur||'ریال',ln=(l,x)=>x?`<div><span>${l}:</span> ${fa(esc(x))}</div>`:'',
+pb=(t,o)=>`<div class="bx"><h4>${t}</h4>${ln('نام / عنوان',o.name)}${ln('شناسه ملی / کد ملی',o.nid)}${ln('شماره اقتصادی',o.eco)}${ln('شماره ثبت',o.reg)}${ln('کد پستی',o.post)}${ln('تلفن',o.tel)}${ln('نشانی',o.addr)}</div>`;
+let n=0;const rows=v.items.map((i,x)=>{if(!i.desc&&!num(i.price))return '';const r=c.rows[x];return `<tr><td>${fa(++n)}</td><td>${fa(esc(i.code))}</td><td class="l">${esc(i.desc)}</td><td>${esc(i.unit)}</td><td>${fa(esc(i.qty))}</td><td>${money(num(i.price))}</td><td>${money(r.gross)}</td><td>${money(num(i.disc))}</td><td>${money(r.net)}</td><td>${fa(esc(i.tax))}٪</td><td>${money(r.tx)}</td><td>${money(r.tot)}</td></tr>`}).join('');
+return `<div class="sh"><div class="sh-h"><div>${S.logo?`<img src="${S.logo}" alt="">`:''}</div><div><h2>${v.kind}</h2><small>${v.kind=='پیش‌فاکتور'?'این سند فاقد اعتبار مالیاتی است':'صورتحساب فروش کالا و خدمات'}</small></div><div>شماره: <b>${fa(esc(v.no))}</b><br>تاریخ: <b>${fa(esc(v.date))}</b>${v.uid?`<br>شناسه یکتا: ${fa(esc(v.uid))}`:''}${v.ref?`<br>ارجاع: ${fa(esc(v.ref))}`:''}</div></div>
+<div class="pt">${pb('مشخصات فروشنده',s)}${pb('مشخصات خریدار ('+(b.type||'حقیقی')+')',b)}</div><div style="margin-bottom:6px">${v.subj?'موضوع: '+esc(v.subj)+' &nbsp;|&nbsp; ':''}روش پرداخت: ${esc(v.pay)}</div>
+<table><tr><th>ردیف</th><th>کد کالا</th><th>شرح کالا یا خدمات</th><th>واحد</th><th>تعداد</th><th>مبلغ واحد</th><th>مبلغ کل</th><th>تخفیف</th><th>پس از تخفیف</th><th>نرخ مالیات</th><th>مبلغ مالیات</th><th>جمع کل</th></tr>${rows}</table>
+<table class="sum"><tr><td>جمع مبلغ پس از تخفیف</td><td>${money(c.net)}</td></tr><tr><td>جمع مالیات بر ارزش افزوده</td><td>${money(c.t)}</td></tr>${c.ex?`<tr><td>سایر هزینه‌ها</td><td>${money(c.ex)}</td></tr>`:''}<tr class="gt"><td>مبلغ قابل پرداخت (${u})</td><td>${money(c.total)}</td></tr>${c.paid?`<tr><td>پرداخت‌شده</td><td>${money(c.paid)}</td></tr><tr><td>مانده</td><td>${money(c.rem)}</td></tr>`:''}</table>
+<p>مبلغ به حروف: <b>${words(c.total)} ${u}</b></p>${v.notes?`<p>توضیحات: ${esc(v.notes).replace(/\n/g,'<br>')}</p>`:''}<div class="sg"><div>مهر و امضای فروشنده</div><div>مهر و امضای خریدار</div></div></div>`}
+function openPv(v){pv=v;$('#pvc').innerHTML=sheet(v);$('#pvc').firstChild.style.zoom=Math.min(1,(innerWidth-16)/794);$('#pv').classList.add('on');document.body.style.overflow='hidden';$('#pc').focus()}
+function closePv(){$('#pv').classList.remove('on');document.body.style.overflow='';show('list')}
+$('#pc').onclick=closePv;$('#pp').onclick=()=>print();$('#pe').onclick=()=>{cur=clone(pv);$('#pv').classList.remove('on');document.body.style.overflow='';show('edit')};
+$('#ps').onclick=()=>{const c=calc(pv),t=`${pv.kind} شماره ${fa(pv.no)}\nتاریخ: ${fa(pv.date)}\nخریدار: ${pv.buyer.name||''}\nمبلغ قابل پرداخت: ${money(c.total)} ${pv.cur}`;navigator.share?navigator.share({title:pv.kind,text:t}).catch(()=>{}):navigator.clipboard?.writeText(t).then(()=>toast('متن خلاصه کپی شد.'))};
+addEventListener('keydown',e=>{if(e.key=='Escape'&&$('#pv').classList.contains('on')&&!$('#dlg').open)closePv()});
+/* راه‌اندازی */
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>b.dataset.v=='new'?newInvoice():show(b.dataset.v));
+let dp;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;$('#inst').hidden=false});$('#inst').onclick=()=>{dp?.prompt();$('#inst').hidden=true};
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+applyTheme();show('list');if(location.hash=='#new')newInvoice();
+</script>
+</body>
+</html>
